@@ -1,6 +1,6 @@
 from aiogram.utils import executor
 from config import dp
-from handlers import client, callback , extra , admin , fsmAdminMenu , noty
+from handlers import client, callback , extra , admin , fsmAdminMenu , noty , inline
 from database.db import sql_create
 import logging
 
@@ -8,6 +8,7 @@ client.register_handlers_client(dp)
 callback.register_callback_handler(dp)
 fsmAdminMenu.register_handlers_fsm_anketa(dp)
 noty.register_handlers_notification(dp)
+inline.register_handlers_inline(dp)
 
 extra.register_extra_game(dp)
 
