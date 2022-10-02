@@ -21,13 +21,13 @@ def get_data(html):
         links = item.find("a").get("href")
         anime.append({
             "link" : links,
-            # "title" : links.find("div","video-title card-content-title "),
+            "title" : item.find("h3","video-title card-content-title").getText().strip(),
             "year" : item.find("span" , "video-year").getText(),
             "gengre": item.find("span" , "video-country").getText()
         })
     # anime.append(photo)
     return anime
-
+#
 def parser():
     html = get_html(URL)
     if html.status_code == 200:
