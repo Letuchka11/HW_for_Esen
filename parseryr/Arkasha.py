@@ -29,6 +29,9 @@ def get_data(html):
     return anime
 #
 def parser():
+    markup = InlineKeyboardMarkup()
+    button_call_1 = InlineKeyboardButton("Next", callback_data="button_call_1")
+    markup.add(button_call_1)
     html = get_html(URL)
     if html.status_code == 200:
         ans = get_data(html.text)
